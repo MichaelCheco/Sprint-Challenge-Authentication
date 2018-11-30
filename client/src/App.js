@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { Route, Switch, NavLink, withRouter } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import Register from './components/Register';
+import Login from './components/Login';
+import Jokes from './components/Jokes';
 
 class App extends Component {
   render() {
