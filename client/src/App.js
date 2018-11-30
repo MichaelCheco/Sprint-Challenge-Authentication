@@ -8,25 +8,38 @@ import Jokes from './components/Jokes';
 
 class App extends Component {
   render() {
+    const token = localStorage.getItem('token')
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <header>
+          <nav>
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/login">Login</NavLink>
+            <NavLink to="register">register</NavLink>
+          </nav>
         </header>
+       
+        <Switch>
+          <Route exact path='/' render={(props) => (
+            <Jokes {...props} />
+          )} />
+    
+          <Route path='/signup' 
+            render={(props) => (
+              <Register {...props} />
+            )} 
+          />
+    
+          <Route path='/login' 
+            render={(props) => (
+              <Login {...props} />
+            )} 
+          />
+        </Switch>
+        {token ? <button onClick={() => {localStorage.removeItem('token'); window.location.reload()}}>Logout</button> : null}
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
