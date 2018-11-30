@@ -12,6 +12,7 @@ class App extends Component {
     return (
       <div className="App">
         <header>
+          <img src={logo} alt="react logo" style={{width: '200px'}}/>
           <nav>
             <NavLink to="/">Home</NavLink>
             <NavLink to="/login">Login</NavLink>
@@ -24,7 +25,7 @@ class App extends Component {
             <Jokes {...props} />
           )} />
     
-          <Route path='/signup' 
+          <Route path='/register' 
             render={(props) => (
               <Register {...props} />
             )} 
