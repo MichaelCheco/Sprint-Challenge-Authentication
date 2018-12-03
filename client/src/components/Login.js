@@ -28,7 +28,7 @@ import {Redirect} from 'react-router-dom';
         } else {
             axios.post('http://localhost:9000/api/login', this.state.user)
                 .then(res => {
-                    if (res.status === 200 && res.data) {
+                    if (res.data) {
                         localStorage.setItem('token', res.data.token);
                         this.setState({
                             loggedIn: true,

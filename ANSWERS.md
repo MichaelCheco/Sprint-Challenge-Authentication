@@ -10,4 +10,4 @@ Sessions are a simple way to store data for individual users against a unique se
 5. bcrypt hashes our passwords multiple times.
 
 6. What are the three parts of the JSON Web Token?
-headers, options, secret
+headers, payload, signature
